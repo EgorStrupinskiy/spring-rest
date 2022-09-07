@@ -9,24 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53e785ae-ad83-4e52-9244-5ab55606ffba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/configuration/MyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/configuration/MyWebInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/controller/MyRESTController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/dao/EmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/dao/EmployeeDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="53e785ae-ad83-4e52-9244-5ab55606ffba" name="Changes" comment="82. Получение одного работника по ID">
+      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/exception_handling/EmployeeGlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/exception_handling/EmployeeIncorrectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/exception_handling/NoSuchEmployeeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/controller/MyRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/com/egorstrupinski/spring/rest/controller/MyRESTController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,29 +61,32 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2CfSbGVOJ0FIpNx7VpIWAL2a77R" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/AllDefaultProjects/spring_course_rest/src/main/Java/com/egorstrupinski/spring/rest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;23c9f21ebc79f148d0975052a928e8d1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/AllDefaultProjects/spring_course_rest/src/main/Java/com/egorstrupinski/spring/rest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "23c9f21ebc79f148d0975052a928e8d1"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\AllDefaultProjects\spring_course_rest\src\main\Java\com\egorstrupinski\spring\rest" />
@@ -203,8 +194,18 @@
       <workItem from="1662394885863" duration="1739000" />
       <workItem from="1662450600463" duration="1475000" />
       <workItem from="1662454420177" duration="3272000" />
-      <workItem from="1662468050811" duration="1343000" />
+      <workItem from="1662468050811" duration="4792000" />
+      <workItem from="1662545929869" duration="4145000" />
+      <workItem from="1662555349011" duration="1453000" />
     </task>
+    <task id="LOCAL-00001" summary="82. Получение одного работника по ID">
+      <created>1662469945029</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662469945029</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,5 +221,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="82. Получение одного работника по ID" />
+    <option name="LAST_COMMIT_MESSAGE" value="82. Получение одного работника по ID" />
   </component>
 </project>
